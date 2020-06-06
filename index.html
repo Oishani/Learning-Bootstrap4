@@ -44,7 +44,6 @@
 
     <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
-            <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login </h4>
@@ -82,21 +81,117 @@
         </div>
     </div>
 
+    <div class="modal fade" tabindex="-1" role="dialog" id="reserveFormModal">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <form method="POST">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Reserve a Table</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group row align-items-center">
+                            <div class="col-12 col-sm-2">
+                                <label for="numguests">Number of Guests</label>
+                            </div>
+                            <div class="col-12 col-sm-10">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="numguests" id="numguests1"
+                                        value="1">
+                                    <label class="form-check-label" for="numguests1">1</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="numguests" id="numguests2"
+                                        value="1">
+                                    <label class="form-check-label" for="numguests2">2</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="numguests" id="numguests3"
+                                        value="1">
+                                    <label class="form-check-label" for="numguests3">3</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="numguests" id="numguests4"
+                                        value="1">
+                                    <label class="form-check-label" for="numguests4">4</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="numguests" id="numguests5"
+                                        value="1">
+                                    <label class="form-check-label" for="numguests5">5</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="numguests" id="numguests6"
+                                        value="1">
+                                    <label class="form-check-label" for="numguests6">6</label>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row form-group align-items-center">
+                            <div class="col-12 col-sm-2">
+                                <label>Section</label>
+                            </div>
+                            <div class="col-12 col-sm-10">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-success active">
+                                        <input type="radio" name="section" id="section1" autocomplete="off" checked>
+                                        Non-Smoking
+                                    </label>
+                                    <label class="btn btn-danger">
+                                        <input type="radio" name="section" id="section2" autocomplete="off"> Smoking
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group align-items-center">
+                            <div class="col-12 col-sm-2">
+                                <label>Date and Time</label>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <input type="text" placeholder="Date" name="date" id="date" class="form-control">
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <input type="text" placeholder="Time" name="time" id="time" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-12 offset-sm-2">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Reserve</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
                 <div class="col-12 col-sm-6">
                     <h1>Ristorante con Fusion</h1>
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our
-                        lipsmacking creations will tickle your culinary senses!</p>
+                        lipsmacking
+                        creations will tickle your culinary senses!</p>
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <img src="img/logo.png" class="img-fluid" alt="">
+                    <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <button class="btn btn-block btn-warning" id="reserveTableButton" data-toggle="tooltip"
-                        data-html="true" title="Or call us at <br><strong>+852 12345678</strong>"
-                        data-placement="bottom">Reserve Table</a>
+                    <button class="btn btn-block btn-warning" id="reserveTableButton" data-toggle="modal"
+                        data-target="#reserveFormModal">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -213,7 +308,7 @@
             </div>
         </div>
 
-        <form method="POST">
+        <!-- <form method="POST">
             <div class="modal-header bg-warning text-white">
                 <h3 class="modal-title">Reserve a Table</h3>
             </div>
@@ -274,7 +369,7 @@
                     </div>
                 </div>
             </div>
-        </form>
+        </form> -->
 
         <footer class="footer">
             <div class="container">
@@ -327,11 +422,6 @@
         <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
         <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip();
-            });
-        </script>
 </body>
 
 </html>
